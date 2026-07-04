@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sajjad.overlaycalculator">
+
+    <!-- صلاحية الظهور فوق التطبيقات وصلاحية خدمة الخلفية -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Scientific Overlay"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        
+        <!-- الشاشة الرئيسية للتطبيق التي تطلب الصلاحية أول مرة -->
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- الخدمة المسؤولة عن تشغيل الزر العائم وزر الـ Close -->
+        <service
+            android:name=".FloatingService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+</manifest>
