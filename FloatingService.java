@@ -73,7 +73,8 @@ public class FloatingService extends Service {
         // تشغيل كود الـ HTML الحالي داخل الـ WebView
         WebView webView = floatingView.findViewById(R.id.calculator_webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("file:///android_asset/index.html"); // يقرأ ملفك مباشرة
+        webView.loadUrl("file:///index.html");
+        // يقرأ ملفك مباشرة
 
         // 3. إضافة ميزة السحب السلس والرمي في زر Close
         setupDragAndDrop();
